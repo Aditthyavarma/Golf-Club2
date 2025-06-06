@@ -111,5 +111,51 @@ gsap.from("#page4 h1", {
     end: "top 70%",
     scrub: 3,
   },
-  
+
+});
+
+// Typing effect on scroll
+const typingElement = document.getElementById("typingText");
+const fullText = "Welcome to Our World";
+let typingIndex = 0;
+let isTyping = false;
+
+function typeText() {
+  if (typingIndex <= fullText.length) {
+    typingElement.innerText = fullText.substring(0, typingIndex);
+    typingIndex++;
+    setTimeout(typeText, 100);
+  }
+}
+
+// ScrollTrigger to start typing when in view
+ScrollTrigger.create({
+  trigger: "#about-us-in",
+  start: "top 80%",
+  end: "top 50%",
+  onEnter: () => {
+    if (!isTyping) {
+      isTyping = true;
+      typeText();
+    }
+  },
+
+
+// Feedback Modal Toggle
+const feedbackBtn = document.getElementById("feedback-btn");
+const feedbackModal = document.getElementById("feedback-modal");
+const closeModal = document.getElementById("close-modal");
+const submitBtn = document.getElementById("submit-feedback");
+
+feedbackBtn.addEventListener("click", () => {
+  feedbackModal.classList.remove("hidden");
+});
+
+closeModal.addEventListener("click", () => {
+  feedbackModal.classList.add("hidden");
+});
+
+submitBtn.addEventListener("click", () => {
+  alert("Thank you for your feedback!");
+  feedbackModal.classList.add("hidde
 });
