@@ -112,3 +112,29 @@ gsap.from("#page4 h1", {
     scrub: 3,
   },
 });
+// Typing effect on scroll
+const typingElement = document.getElementById("typingText");
+const fullText = "Welcome to Our World";
+let typingIndex = 0;
+let isTyping = false;
+
+function typeText() {
+  if (typingIndex <= fullText.length) {
+    typingElement.innerText = fullText.substring(0, typingIndex);
+    typingIndex++;
+    setTimeout(typeText, 100);
+  }
+}
+
+// ScrollTrigger to start typing when in view
+ScrollTrigger.create({
+  trigger: "#about-us-in",
+  start: "top 80%",
+  end: "top 50%",
+  onEnter: () => {
+    if (!isTyping) {
+      isTyping = true;
+      typeText();
+    }
+  },
+});
