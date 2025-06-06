@@ -268,6 +268,36 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
+
+<script>
+  // Scorecard calculation
+  document.getElementById("scoreForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let total = 0;
+    for (let i = 1; i <= 3; i++) {
+      const val = parseInt(document.querySelector(`[name=s${i}]`).value);
+      if (!isNaN(val)) total += val;
+    }
+    document.getElementById("scoreResult").innerText = `🎯 Total Score: ${total}`;
+  });
+
+  // Booking form
+  document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("playerName").value;
+    const time = document.getElementById("teeTime").value;
+    if (name && time) {
+      document.getElementById("bookingMsg").innerText =
+        `✅ Booking confirmed for ${name} at ${time}`;
+    } else {
+      document.getElementById("bookingMsg").innerText =
+        `❌ Please enter name and select time.`;
+    }
+  });
+</script>
+
+
   </body>
 </html>
