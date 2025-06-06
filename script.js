@@ -111,23 +111,5 @@ gsap.from("#page4 h1", {
     end: "top 70%",
     scrub: 3,
   },
-});
-
-// Feedback Modal Toggle
-const feedbackBtn = document.getElementById("feedback-btn");
-const feedbackModal = document.getElementById("feedback-modal");
-const closeModal = document.getElementById("close-modal");
-const submitBtn = document.getElementById("submit-feedback");
-
-feedbackBtn.addEventListener("click", () => {
-  feedbackModal.classList.remove("hidden");
-});
-
-closeModal.addEventListener("click", () => {
-  feedbackModal.classList.add("hidden");
-});
-
-submitBtn.addEventListener("click", () => {
-  alert("Thank you for your feedback!");
-  feedbackModal.classList.add("hidden");
+  
 });

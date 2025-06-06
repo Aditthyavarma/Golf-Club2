@@ -58,6 +58,14 @@
         <div id="scroller">
           <div id="scroller-in">
             <h4>MEMBERSHIP</h4>
+      <input type="text" id="eventSearchInput" placeholder="Search events...">
+      <button onclick="searchEvents()">Search</button>
+      <div class="event-card">
+  <h3 class="event-title">Summer Golf Tournament</h3>
+  <p class="event-date">June 20, 2025</p>
+  <!-- Other event details -->
+</div>
+
 <h4>GOLF ACADEMY</h4>
 <h4>CHAMPIONSHIP COURSE</h4>
 <h4>CLUBHOUSE</h4>
@@ -220,6 +228,14 @@
             GET DIRECTIONS <br />
           </h4>
         </div>
+        <form id="membershipForm">
+  <input type="text" id="memberName" placeholder="Your Name" required>
+  <input type="email" id="memberEmail" placeholder="Your Email" required>
+  <textarea id="memberMessage" placeholder="Your Message" required></textarea>
+  <button type="submit">Submit Inquiry</button>
+</form>
+<div id="membershipResponse"></div>
+
       </div>
     </div>
 
