@@ -48,7 +48,6 @@
         <p>
          Golf Club is a premier golfing destination offering a championship course, expert coaching, and first-class amenities. Whether you're a seasoned golfer or just getting started, we provide the perfect environment to play, learn, and relax.
 
-
         </p>
         <a href="#scroller-in" id="arrow">
           <i class="ri-arrow-down-line"></i>
@@ -64,6 +63,40 @@
 <h4>TOURNAMENTS</h4>
 
           </div>
+<!-- ⛳ Scorecard (New Section) -->
+<section style="margin-top: 40px;">
+  <h3>Interactive Scorecard</h3>
+  <form id="scoreForm">
+    <table border="1" style="margin: auto; text-align: center;">
+      <tr><th>Hole</th><th>Score</th></tr>
+      <tr><td>Hole 1</td><td><input type="number" name="s1" min="1" max="10"></td></tr>
+      <tr><td>Hole 2</td><td><input type="number" name="s2" min="1" max="10"></td></tr>
+      <tr><td>Hole 3</td><td><input type="number" name="s3" min="1" max="10"></td></tr>
+    </table>
+    <button type="submit" style="margin-top:10px;">Calculate Total</button>
+    <div id="scoreResult" style="margin-top:10px; font-weight:bold;"></div>
+  </form>
+</section>
+
+<!-- 📅 Tee Time Booking (New Section) -->
+<section style="margin-top: 40px;">
+  <h3>Book a Tee Time</h3>
+  <form id="bookingForm">
+    <input type="text" id="playerName" placeholder="Enter Name" required><br><br>
+    <select id="teeTime" required>
+      <option value="">Select Time</option>
+      <option>8:00 AM</option>
+      <option>10:00 AM</option>
+      <option>12:00 PM</option>
+      <option>2:00 PM</option>
+    </select><br><br>
+    <button type="submit">Book Now</button>
+    <div id="bookingMsg" style="margin-top:10px; font-weight:bold;"></div>
+  </form>
+</section>
+
+
+
           <div id="scroller-in">
            <h4>MEMBERSHIP</h4>
 <h4>GOLF ACADEMY</h4>
