@@ -111,4 +111,21 @@ gsap.from("#page4 h1", {
     end: "top 70%",
     scrub: 3,
   },
+  
 });
+function searchEvents() {
+  const input = document.getElementById('eventSearchInput').value.toLowerCase();
+  const events = document.getElementsByClassName('event-card');
+
+  Array.from(events).forEach(function(event) {
+    const title = event.querySelector('.event-title').textContent.toLowerCase();
+    const date = event.querySelector('.event-date').textContent.toLowerCase();
+
+    if (title.includes(input) || date.includes(input)) {
+      event.style.display = '';
+    } else {
+      event.style.display = 'none';
+    }
+  });
+}
+
