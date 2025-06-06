@@ -128,4 +128,18 @@ function searchEvents() {
     }
   });
 }
+document.getElementById('membershipForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Collect form data
+  const name = document.getElementById('memberName').value;
+  const email = document.getElementById('memberEmail').value;
+  const message = document.getElementById('memberMessage').value;
+
+  // For demonstration, we'll just display a success message
+  document.getElementById('membershipResponse').textContent = 'Thank you for your inquiry, ' + name + '! We will get back to you shortly.';
+
+  // Reset the form
+  document.getElementById('membershipForm').reset();
+});
 
