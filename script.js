@@ -111,6 +111,7 @@ gsap.from("#page4 h1", {
     end: "top 70%",
     scrub: 3,
   },
+
 });
 
 // Typing effect on scroll
@@ -156,6 +157,5 @@ closeModal.addEventListener("click", () => {
 
 submitBtn.addEventListener("click", () => {
   alert("Thank you for your feedback!");
-  feedbackModal.classList.add("hidden");
-
+  feedbackModal.classList.add("hidde
 });
