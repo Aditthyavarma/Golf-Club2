@@ -113,33 +113,3 @@ gsap.from("#page4 h1", {
   },
   
 });
-function searchEvents() {
-  const input = document.getElementById('eventSearchInput').value.toLowerCase();
-  const events = document.getElementsByClassName('event-card');
-
-  Array.from(events).forEach(function(event) {
-    const title = event.querySelector('.event-title').textContent.toLowerCase();
-    const date = event.querySelector('.event-date').textContent.toLowerCase();
-
-    if (title.includes(input) || date.includes(input)) {
-      event.style.display = '';
-    } else {
-      event.style.display = 'none';
-    }
-  });
-}
-document.getElementById('membershipForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  // Collect form data
-  const name = document.getElementById('memberName').value;
-  const email = document.getElementById('memberEmail').value;
-  const message = document.getElementById('memberMessage').value;
-
-  // For demonstration, we'll just display a success message
-  document.getElementById('membershipResponse').textContent = 'Thank you for your inquiry, ' + name + '! We will get back to you shortly.';
-
-  // Reset the form
-  document.getElementById('membershipForm').reset();
-});
-
